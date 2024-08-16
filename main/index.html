@@ -1,11 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mortgage Repayment Calculator</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <!-- Main container for the mortgage calculator -->
+    <div class="calculator-container">
+      <!-- Form section for user inputs -->
+      <div class="form-section">
+        <!-- Header with the title and clear all link -->
+        <header class="form-header">
+          <h1>Mortgage Calculator</h1>
+          <a href="#" class="clear-all">Clear All</a>
+        </header>
+
+        <!-- The form where users input their mortgage information -->
+        <form id="mortgage-form">
+          <!-- Mortgage amount input field -->
+          <div class="form-group">
+            <label for="amount">Mortgage Amount</label>
+            <input type="number" id="amount" name="amount" required />
+          </div>
+
+          <!-- Row containing mortgage term and interest rate inputs -->
+          <div class="form-row">
+            <!-- Mortgage term input field -->
+            <div class="form-group">
+              <label for="term">Mortgage Term</label>
+              <input type="number" id="term" name="term" required />
+              <!-- Span for inline label inside the input -->
+              <span class="input-label">years</span>
+            </div>
+
+            <!-- Interest rate input field -->
+            <div class="form-group">
+              <label for="rate">Interest Rate</label>
+              <input type="number" id="rate" name="rate" step="0.01" required />
+              <!-- Span for inline label inside the input -->
+              <span class="input-label">%</span>
+            </div>
+          </div>
+
+          <!-- Submit button to calculate repayments -->
+          <button type="submit" class="calculate-btn">
+            Calculate Repayments
+          </button>
+        </form>
+      </div>
+
+      <!-- Mortgage type section, placed outside the form for better layout control -->
+      <div class="form-group mortgage-type-section">
+        <label>Mortgage Type</label>
+        <div class="radio-group">
+          <input
+            type="radio"
+            id="repayment"
+            name="mortgage-type"
+            value="repayment"
+            required
+          />
+          <label for="repayment">Repayment</label>
+        </div>
+        <div class="radio-group">
+          <input
+            type="radio"
+            id="interest-only"
+            name="mortgage-type"
+            value="interest-only"
+            required
+          />
+          <label for="interest-only">Interest Only</label>
+        </div>
+      </div>
+
+      <!-- Section to display results after calculation -->
+      <div class="results-section">
+        <div class="results-info">
+          <h2>Results shown here</h2>
+          <p>
+            Complete the form and click "calculate repayments" to see what your
+            monthly repayments would be.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
